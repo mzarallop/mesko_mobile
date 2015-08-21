@@ -1,0 +1,32 @@
+<div class="container-fluid">
+<div class="row no-gutter">
+	<div style="text-align:center">
+			<input type="text" id="query_input" ng-model="query_input" class="buscador_catalogo" placeholder="Buscador...">	
+	</div>
+</div>
+
+<ul class="menu_categorias">
+	<li data-ng-repeat="lista in lista_menu | filter:query_input" class="item_categorias">
+		<div class="row">
+			<div class="col-xs-2">
+				<span class="badge">{{lista.subcategoria.length}}</span>
+			</div>
+			<div class="col-xs-10">
+				<div class="row" >
+					<div class="col-xs-8">
+						<strong>{{lista.categoria.descripcion}}</strong>
+					</div>
+					<div class="col-xs-4 row_item">
+						<i class="glyphicon glyphicon-chevron-down"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<ul class="sub_categorias">
+			<li data-ng-repeat="sub in lista.subcategoria | filter:query_input" data-ng-click="productos(lista.categoria.id,sub.id)">
+				<i class="glyphicon glyphicon-menu-right"></i> {{sub.nombre | lowercase}}
+			</li>
+		</ul>
+	</li>
+</ul>
+</div>

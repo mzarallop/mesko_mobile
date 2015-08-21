@@ -1,0 +1,64 @@
+<div class="container-fluid">
+<div class="row no-gutter">
+	<div class="col-md-12">
+		<!--<div class="caja_filtros">
+			<select ng-model="selectFiltrar" data-ng-option="t as t for t in filtros track by t" data-ng-change='filtrar()'>
+			</select>
+		</div>-->
+	</div>
+</div>
+<div class="row no-gutter">
+	<div class="col-xs-12 hidden-sm hidden-md">
+		<ul class="productos" style="margin:0;padding:0px;list-style:none;">
+			<li data-ng-repeat="prod in productos" class="contenido item_catalogo" style="margin-bottom:10px;margin-top:10px;padding: 10px;border-bottom:margin-bottom:10px;margin-top:10px;padding: 10px;border-bottom: 1px solid rgba(128, 128, 128, 0.16);" data-ng-click="fn_producto(prod.producto.id)">
+
+				<div class="row">
+					<div class="col-xs-6">
+						<img src="http://mesko.cl/img/productos/miniatura/{{prod.imagenes[0].imagen}}" alt="" width="100%">
+					</div>
+					<div class="col-xs-6">
+						{{prod.producto.nombre | uppercase}}<br>
+
+						<div class="precio_producto">{{prod.producto.precio | currency:undefined:0}}
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="col-sm-12 hidden-md hidden-xs">
+		<ul class="productos-sm" style="margin:0;padding:0px;list-style:none;">
+			<li data-ng-repeat="prod in productos" class="contenido item_catalogo_sm col-sm-4" style="" data-ng-click="fn_producto(prod.producto.id)">
+				<div class="row caja-sm">
+
+							<div class="col-sm-12">
+								<img src="http://mesko.cl/img/productos/miniatura/{{prod.imagenes[0].imagen}}" alt="" width="100%">
+							</div>
+							<div class="col-sm-12">
+								{{prod.producto.nombre | uppercase}}<br>
+
+								<div class="precio-sm">{{prod.producto.precio | currency:undefined:0}}</div>
+
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-12 hidden-sm hidden-xs">
+		<ul class="productos-sm" style="margin:0;padding:0px;list-style:none;">
+			<li data-ng-repeat="prod in productos" class="contenido item_catalogo_sm col-sm-4" style="" data-ng-click="fn_producto(prod.producto.id)">
+				<div class="row caja-sm">
+
+							<div class="col-sm-12">
+								<img src="http://mesko.cl/img/productos/miniatura/{{prod.imagenes[0].imagen}}" alt="" width="100%">
+							</div>
+							<div class="col-sm-12">
+								{{prod.producto.nombre | uppercase}}<br>
+
+								<div class="precio-md">{{prod.producto.precio | currency:undefined:0}}</div>
+
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>

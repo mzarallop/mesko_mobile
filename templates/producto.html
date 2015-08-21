@@ -1,0 +1,79 @@
+<div class="container-fluid">
+<ul class="producto" style="list-style:none;margin:0px;padding:0px;">
+	<li>
+
+	<div class="row no-gutter">
+		<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+			<div class="container-fluid slider">
+			
+				<img ng-repeat="img in producto.imagenes" class="slide slide-animation nonDraggableImage" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"  ng-hide="!isCurrentSlideIndex($index)" ng-src="http://mesko.cl/img/productos/catalogo/{{img.imagen}}" width="100%">
+				<a class="arrow prev" href="" ng-click="nextSlide()"></a>
+		    	<a class="arrow next" href="" ng-click="prevSlide()"></a>
+		    	<nav class="nav_slide">
+			        <div class="wrapper">
+			            <ul class="dots">
+			                <li class="dot" ng-repeat="img in producto.imagenes">
+			                    <a href="" ng-class="{'active':isCurrentSlideIndex($index)}"
+			                       ng-click="setCurrentSlideIndex($index);">{{img.imagen}}</a>
+			                </li>
+			            </ul>
+			        </div>
+			    </nav>
+	    	</div>
+    	</div>
+    	<div class="col-sm-6 hidden-xs">
+			<div class="container-fluid slider-sm">
+			
+				<img ng-repeat="img in producto.imagenes" class="slide slide-animation nonDraggableImage" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"  ng-hide="!isCurrentSlideIndex($index)" ng-src="http://mesko.cl/img/productos/catalogo/{{img.imagen}}" width="100%">
+				<a class="arrow prev" href="" ng-click="nextSlide()"></a>
+		    	<a class="arrow next" href="" ng-click="prevSlide()"></a>
+		    	<nav class="nav_slide">
+			        <div class="wrapper">
+			            <ul class="dots">
+			                <li class="dot" ng-repeat="img in producto.imagenes">
+			                    <a href="" ng-class="{'active':isCurrentSlideIndex($index)}"
+			                       ng-click="setCurrentSlideIndex($index);">{{img.imagen}}</a>
+			                </li>
+			            </ul>
+			        </div>
+			    </nav>
+	    	</div>
+		</div>
+		<!-- XS -->
+		<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+			<div class="col-xs-12" style="text-align:center">
+				<strong>{{producto.producto.nombre | uppercase}}</strong><br>
+				{{producto.producto.marca}}<br>
+				<div class="precio-xs" style="text-align:right">
+					{{producto.producto.precio | currency:undefined:0}}
+				</div>
+			</div>
+			<div class="col-xs-12 texto-descripcion" ng-bind-html="producto.producto.descripcion">
+				
+			</div>
+			<div class="col-xs-12" style="text-align:center">
+				<button class="btn"><i class="glyphicon glyphicon-heart" style="font-size: 3em;"></i></button>
+				<button class="btn"><i class="glyphicon glyphicon-shopping-cart" style="font-size: 3em;"></i></button>
+			</div>
+		</div>
+		<!-- < MD -->
+		<div class="hidden-xs col-md-6 col-sm-6 col-lg-6">
+			<div class="col-xs-12" style="text-align:center">
+				<strong>{{producto.producto.nombre | uppercase}}</strong><br>
+				{{producto.producto.marca}}<br>
+				<div class="precio" style="text-align:right">
+					{{producto.producto.precio | currency:undefined:0}}
+				</div>
+			</div>
+			<div class="col-xs-12 texto-descripcion" ng-bind-html="producto.producto.descripcion">
+				
+			</div>
+			<div class="col-xs-12" style="text-align:center">
+				<button class="btn"><i class="glyphicon glyphicon-heart" style="font-size: 3em;"></i></button>
+				<button class="btn"><i class="glyphicon glyphicon-shopping-cart" style="font-size: 3em;"></i></button>
+			</div>
+		</div>
+	</div>
+	</li>
+</ul>
+</div>
