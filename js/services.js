@@ -1,6 +1,6 @@
 app.service('menuService',['$http', '$q',function($http, $q){
 	var deferred = $q.defer();
-	    
+
     function menus(){
     	$http.get("http://mesko.cl/api/welcome/menus/", {cache:true})
     	.success(function(data){
@@ -16,7 +16,7 @@ app.service('menuService',['$http', '$q',function($http, $q){
 
 //servicio de datos catalogo
 app.service('catalogoSrv', ['$http', '$q','$window', function($http, $q, $window){
-	
+
 	function filtros(){
 		var datos = ['Nombre', 'Precio Menor', 'Precio Mayor'];
 		return datos;
@@ -69,4 +69,5 @@ app.service('catalogoSrv', ['$http', '$q','$window', function($http, $q, $window
 			crearFavorito:crearFavorito,
 			verFavoritos:verFavoritos
 	}
-}]);	
+
+}]);
